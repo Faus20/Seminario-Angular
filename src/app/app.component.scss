@@ -1,0 +1,36 @@
+span{
+    font-weight: bold;
+    color: orangered;
+}
+
+.navbar-brand{
+    color: orangered;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.nav-item a{
+    color: #f4f4f4!important;
+    font-size: 15px;
+    padding: 0%;
+    text-transform: uppercase;
+}
+
+.nav-item a:hover{
+    background-color: rgb(240, 176, 1);
+}
+
+.slide img{
+    height: 91vh;
+}
+
+.container{
+    max-width: 99%;
+    margin-top: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+footer{
+    text-align: center;
+}

@@ -1,0 +1,32 @@
+<div class="encabezado_productos">
+    <h1>Productos</h1>
+</div>
+<div class="row">
+
+    <div class="col-6 mt-4" *ngFor= "let product of products">
+        <div class="card-group">
+            <div class="card">
+                <div class="text-center text-light tipo">
+                    <p class="card-text">{{product.type}}</p>
+                </div>
+                <img [src]="product.image" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title "><span class="nombre">{{product.name}}</span></h4>
+                    <p class="card-text">Precio: {{product.price |currency}}</p>
+                    <div >
+                        <span *ngIf = "product.stock==0" class="badge bg-danger stock">Sin stock</span>
+                        <span *ngIf = "product.stock>=1"  class="badge bg-success stock">Hay stock</span>
+                    </div>
+                    <div class="text-center">
+                        <app-input-integer [(quantity)]="product.quantity" [max]="product.stock" *ngIf="product.stock"></app-input-integer>
+                        <button *ngIf = "product.stock==0" class="btn btn-primary m-1" disabled>Agregar al carrito</button>
+                        <button *ngIf = "product.stock>=1" class="btn btn-primary m-1" (click)="addToCart(product)">Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+

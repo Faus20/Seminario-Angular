@@ -1,0 +1,16 @@
+<div class="encabezado_carrito sticky">
+    <h1>Carrito</h1>
+ <div class="subrayado"></div>
+<div>
+
+    <ul class="list-group text-center">
+        <li class="list-group-item" *ngFor="let product of cartList$ | async">
+            <button type="button" class="btn btn-danger m-1" (click)="quitToCart(product)">Quitar</button>
+            {{product.name}}  <span class="badge bg-warning">{{product.quantity}}</span>
+            | {{product.price | currency}}
+        </li>
+        
+    </ul>
+    Total: {{priceCart$ | async | currency}}
+</div>
+</div>

@@ -1,0 +1,26 @@
+<div class="encabezado_carrito text-center">
+    <h1>Mi Carrito</h1>
+  <div class="subrayado"></div>
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Imagen</th>
+          <th scope="col">Producto</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Quitar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of cartList$ | async">
+          <td><img class="img-thumbnail" [src]="product.image" alt=""></td>
+          <td>{{product.name}}</td>
+          <td>{{product.price|currency}}</td>
+          <td>{{product.quantity}}</td>
+          <td><button type="button" class="btn btn-danger m-1" (click)="quitToCart(product)">Quitar</button></td>
+        </tr>
+    </table>
+    <h1 class="text-center"> Total: {{priceCart$ | async | currency}}</h1>
+  </div>
+  
